@@ -16,8 +16,8 @@ var Question = sequelize.define('question', {
   difficulty: Sequelize.INTEGER
 });
 
-User.hasMany(Question);
-Category.hasMany(Question);
+User.hasMany(Question, { as: 'User_Question', foreignKey: 'question_Id' });
+Category.hasMany(Question, { as: 'Category_Question', foreignKey: 'question_Id' });
 
 User.sync();
 Category.sync();
