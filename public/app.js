@@ -18,7 +18,10 @@ function($stateProvider, $urlRouterProvider) {
       .state('finished', {
         url: '/questions/finished',
         templateUrl: '/questions/finished.html'
-      });
+      }).state('admin', {
+        url: '/admin', 
+        templateUrl: '/admin/admin.html'
+      })
 });
 
 
