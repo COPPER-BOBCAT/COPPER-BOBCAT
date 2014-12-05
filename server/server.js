@@ -1,5 +1,4 @@
 var express = require('express');
-<<<<<<< HEAD
 var db = require('./db/indexDB.js');
 var app = express();
 var config = require('./oauth.js');
@@ -27,7 +26,6 @@ passport.use(new GithubStrategy(
     });
   }
 ));
-=======
 // var db = require('./db');
 var app = express();
 var router = require('./routes.js');
@@ -36,7 +34,11 @@ var passport = require('passport')
 var GoogleStrategy = require('passport-google').Strategy;
 
 app.use("/questions", router);
+<<<<<<< HEAD
 >>>>>>> put in basic template routes and controllers
+=======
+>>>>>>> 9d8c8f5fed4edad30ddd0c5061ffa8bf986361c7
+>>>>>>> b15801d86fa323f1aa5a852cc394f567cb29c78c
 
 
 // authentication middleware
