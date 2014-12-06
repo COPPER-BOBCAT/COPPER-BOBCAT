@@ -83,7 +83,7 @@ function ensureAuthenticated(req, res, next) {
 
 //handling requests and DB queries
 
-app.get('/questions', ensureAuthenticated, function(req, res) {
+app.get('/questions',  function(req, res) { //ensureAuthenticated,
   // var id = req.user && req.user.id;
 
   db.queryDb.getQuestions(function(data) {
