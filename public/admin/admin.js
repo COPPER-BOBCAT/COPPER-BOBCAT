@@ -31,6 +31,7 @@ angular.module('copperBobcat.admin', ['datatables'])
           .then(function(res){
             $scope.question = {};
             $scope.dtOptions.reloadData(); 
+            $scope.toggleForm();
           });
     };
 
@@ -83,7 +84,7 @@ angular.module('copperBobcat.admin', ['datatables'])
           return '<span class="editable" editable-textarea="questionEdit.text"  onbeforesave="updateEntry({id: '+full.id+', field: '+meta.col+', data: $data})">'+ data +'</span>';
         }),
         DTColumnBuilder.newColumn('answer').withTitle('Answer').renderWith(function(data, type, full, meta){
-          return '<span class="editable" editable-textarea="questionEdit.answer" onbeforesave="updateEntry({id: '+full.id+', field: '+meta.col+', data: $data})">'+ data +'</span>';
+          return '<span class="editable" editable-text="questionEdit.answer" onbeforesave="updateEntry({id: '+full.id+', field: '+meta.col+', data: $data})">'+ data +'</span>';
         }),
         DTColumnBuilder.newColumn('difficulty').withTitle('Difficulty').renderWith(function(data, type, full, meta){
           return '<span class="editable" editable-text="questionEdit.difficulty"  onbeforesave="updateEntry({id: '+full.id+', field: '+meta.col+', data: $data})">'+ data +'</span>';
