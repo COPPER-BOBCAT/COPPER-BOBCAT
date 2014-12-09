@@ -1,11 +1,15 @@
-<div id='container' class='noselect' >
+<div id='container' class='noselect admin-page' >
   <div ng-controller="AdminController">
-          {{data}}
+      <div class="overlay" ng-show="showForm" ng-click="toggleForm()"></div>
 
-      <form >
-        Question <br>
+      <button ng-click="toggleForm()">Add A Question</button>
+
+      <form ng-show="showForm">
+        <label>Question</label>
+        
         <textarea ng-model="question.text"></textarea><br>
-        Answer <br>
+
+        <label>Answer</label>
         <input type="text" ng-model="question.answer"> <br>
         Select Difficulty <br>
         <select name="Difficulty" id="difficulty-level" ng-model="question.difficulty" ngRequired><br>
@@ -25,9 +29,12 @@
 
         <input type="submit" ng-click="addQuestion(question)" value="Add Question" />
       </form>
+      <divng-show="!showForm">
 
-      <table datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="row-border hover">
+        <table datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="row-border hover">
 
-      </table>
+        </table>
+
+      </div>
 
 </div>

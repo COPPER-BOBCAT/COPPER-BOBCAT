@@ -9,8 +9,13 @@ angular.module('copperBobcat.admin', ['datatables'])
     //used for inline editing and question creation
     $scope.question = {};
     $scope.questionEdit = {};
+    $scope.showForm = false;
 
     $scope.diffOptions = [0,1,2,3,4,5,6,7,8,9,10];
+
+    $scope.toggleForm = function(){
+      $scope.showForm = !$scope.showForm;
+    }
 
     $scope.getVal = function(data){
       console.log('fired');
